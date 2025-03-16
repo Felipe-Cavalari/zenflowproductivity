@@ -6,6 +6,8 @@
     <title>ZenFlow - Transforme sua produtividade</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/Logo Zenflow(sem texto).png" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
     <style>
         body {
@@ -61,6 +63,23 @@
         html.dark .bg-indigo-100 {
             background-color: rgba(99, 102, 241, 0.2);
         }
+        .gradientTitle {
+            font-size: 2rem; /* Tamanho do texto */
+            background-image: linear-gradient(to right, #647EBB, #07B393); /* Gradiente da esquerda para a direita */
+            -webkit-background-clip: text; /* Suporte para o gradiente no texto */
+            background-clip: text; /* Aplica o gradiente no texto */
+            color: transparent; /* Torna o texto transparente para mostrar o gradiente */
+        }
+        .gradientText {
+            background-image: linear-gradient(to right, #647EBB, #07B393); /* Gradiente da esquerda para a direita */
+            -webkit-background-clip: text; /* Suporte para o gradiente no texto */
+            background-clip: text; /* Aplica o gradiente no texto */
+            color: transparent; /* Torna o texto transparente para mostrar o gradiente */
+        }          
+        .gradientZenflow {
+            background-image: linear-gradient(to right, #647EBB, #07B393); /* Gradiente da esquerda para a direita */
+        }          
+        
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
@@ -69,15 +88,13 @@
         <div class="container mx-auto px-4 py-3">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <div class="flex items-center space-x-2">
-                    <svg class="h-8 w-8 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                    </svg>
-                    <span class="text-xl font-bold text-gray-900">ZenFlow</span>
+                <div class="flex items-center">
+                    <a href="/"><img src="./assets/images/Logo Zenflow colorido - Vertical.svg" alt="Zenflow icon" class="w-36 h-16">
+                    </a>
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-8">
+                <nav class="hidden md:flex items-center space-x-8 ">
                     <a href="#home" class="text-gray-700 hover:text-indigo-600 transition-all">Home</a>
                     <a href="#sobre" class="text-gray-700 hover:text-indigo-600 transition-all">Sobre</a>
                     <a href="#recursos" class="text-gray-700 hover:text-indigo-600 transition-all">Recursos</a>
@@ -87,11 +104,11 @@
                     <!-- Theme Toggle Button -->
                     <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 focus:outline-none">
                         <!-- Sun icon for dark mode -->
-                        <svg id="sun-icon" class="h-5 w-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <svg id="sun-icon" class="h-5 w-5 hidden" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
                         </svg>
                         <!-- Moon icon for light mode -->
-                        <svg id="moon-icon" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg id="moon-icon" class="h-5 w-5 text-black dark:text-white" viewBox="0 0 20 20">
                             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                         </svg>
                     </button>
@@ -102,11 +119,11 @@
                     <!-- Theme Toggle Button (Mobile) -->
                     <button id="theme-toggle-mobile" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 focus:outline-none">
                         <!-- Sun icon for dark mode -->
-                        <svg id="sun-icon-mobile" class="h-5 w-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <svg id="sun-icon-mobile" class="h-5 w-5 hidden" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
                         </svg>
                         <!-- Moon icon for light mode -->
-                        <svg id="moon-icon-mobile" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg id="moon-icon-mobile" class="h-5 w-5"  viewBox="0 0 20 20">
                             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                         </svg>
                     </button>
@@ -125,7 +142,7 @@
                     <a href="#home" class="text-gray-700 hover:text-indigo-600 transition-all">Home</a>
                     <a href="#sobre" class="text-gray-700 hover:text-indigo-600 transition-all">Sobre</a>
                     <a href="#recursos" class="text-gray-700 hover:text-indigo-600 transition-all">Recursos</a>
-                    <a href="#contato" class="text-gray-700 hover:text-indigo-600 transition-all">Contato</a>
+                    <a href="#contato" class="text-gray-700 hover:gradientZenflow transition-all">Contato</a>
                 </div>
             </div>
         </div>
@@ -134,9 +151,9 @@
     <!-- Hero Section -->
     <section id="home" class="hero h-screen flex items-center justify-center text-white pt-16">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Transforme sua produtividade com ZenFlow</h1>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Transforme sua produtividade com <span class="gradientText">ZenFlow</span></h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Organize suas tarefas e alcance seus objetivos com facilidade</p>
-            <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all transform hover:scale-105">
+            <button class="gradientZenflow text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all transform hover:scale-105">
                 Experimente Agora
             </button>
         </div>
@@ -146,13 +163,15 @@
     <section id="sobre" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-8 text-gray-800">Sobre o ZenFlow</h2>
-                <p class="text-lg text-gray-600 mb-10">
-                    ZenFlow é uma plataforma intuitiva projetada para ajudar você a gerenciar seu tempo, aumentar sua produtividade e manter o foco no que realmente importa. Nosso sistema combina simplicidade com funcionalidades poderosas.
+                <h2 class="text-3xl font-bold mb-8 gradientTitle">Sobre o ZenFlow</h2>
+                <p class="text-lg text-gray-600 mb-10 text-justify">
+                    <span class="gradientText">ZenFlow</span> é um template Notion intuitivo, projetado para ajudá-lo a gerenciar seu tempo, 
+                    aumentar sua produtividade e manter o foco no que realmente importa. 
+                    Combinando simplicidade e funcionalidades poderosas, ZenFlow organiza sua rotina de forma equilibrada, para que você alcance seus objetivos com mais eficiência e sem sobrecarga.
                 </p>
                 
                 <div class="grid md:grid-cols-3 gap-8 text-left">
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">   
                         <div class="text-indigo-600 mb-3">
                             <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
