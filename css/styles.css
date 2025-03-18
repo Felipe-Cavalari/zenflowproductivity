@@ -1,0 +1,28 @@
+
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+
+.gradientTitle {
+    font-size: 2rem; /* Tamanho do texto */
+    background-image: linear-gradient(to right, #647EBB, #07B393); /* Gradiente da esquerda para a direita */
+    -webkit-background-clip: text; /* Suporte para o gradiente no texto */
+    background-clip: text; /* Aplica o gradiente no texto */
+    color: transparent; /* Torna o texto transparente para mostrar o gradiente */
+}
+.gradientText {
+    background-image: linear-gradient(to right, #647EBB, #07B393); /* Gradiente da esquerda para a direita */
+    -webkit-background-clip: text; /* Suporte para o gradiente no texto */
+    background-clip: text; /* Aplica o gradiente no texto */
+    color: transparent; /* Torna o texto transparente para mostrar o gradiente */
+}          
+.gradientZenflow {
+    background-image: linear-gradient(to right, #647EBB, #07B393); /* Gradiente da esquerda para a direita */
+}          
