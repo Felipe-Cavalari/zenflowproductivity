@@ -17,7 +17,7 @@
     <!-- Importação de fontes, icones e js -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/images/Logo Zenflow(sem texto).png" type="image/x-icon">
+    <link rel="icon" href="favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="./js/index.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -36,20 +36,30 @@
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-8 ">
+                <nav class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="text-white hover:text-[#647EBB] transition-all">Home</a>
                     <a href="#sobre" class="text-white hover:text-[#647EBB] transition-all">Sobre</a>
                     <a href="#recursos" class="text-white hover:text-[#647EBB] transition-all">Recursos</a>
                     <a href="#pricing" class="text-white hover:text-[#647EBB] transition-all">Preço</a>
                 </nav>
                 
+                              
                 <!-- Mobile Menu Button -->                
-                <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
-                        <!-- hamburguer icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" id="open-mobile-menu"  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-                        <!-- close menu icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" id="close-mobile-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    <button id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" role="button" class="md:hidden text-white focus:outline-none">
+                        <!-- Ícone de menu (hambúrguer) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" id="open-mobile-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true">
+                            <line x1="4" x2="20" y1="12" y2="12"/>
+                            <line x1="4" x2="20" y1="6" y2="6"/>
+                            <line x1="4" x2="20" y1="18" y2="18"/>
+                        </svg>
+                        
+                        <!-- Ícone de fechar (X) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" id="close-mobile-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x hidden" aria-hidden="true">
+                            <path d="M18 6 6 18"/>
+                            <path d="m6 6 12 12"/>
+                        </svg>
                     </button>
+
                 </div>
             </div>
             
@@ -57,10 +67,10 @@
             <div id="mobile-menu" class="md:hidden hidden max-h-0 py-3 mt-3 border-t border-gray-100 
              duration-500 transition ">
                 <div class="flex flex-col space-y-3 text-center">
-                    <a href="#home" class="text-white hover:text-[#647EBB] transition-all">Home</a>
-                    <a href="#sobre" class="text-white hover:text-[#647EBB] transition-all">Sobre</a>
-                    <a href="#recursos" class="text-white hover:text-[#647EBB] transition-all">Recursos</a>
-                    <a href="#contato" class="text-white hover:gradientZenflow transition-all">Contato</a>
+                    <a id='mobile-nav-link' href="#home" class="text-white hover:text-[#647EBB] transition-all">Home</a>
+                    <a id='mobile-nav-link' href="#sobre" class="text-white hover:text-[#647EBB] transition-all">Sobre</a>
+                    <a id='mobile-nav-link' href="#recursos" class="text-white hover:text-[#647EBB] transition-all">Recursos</a>
+                    <a id='mobile-nav-link' href="#pricing" class="text-white hover:gradientZenflow transition-all">Preço</a>
                 </div>
             </div>
         </div>
@@ -71,13 +81,13 @@
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Transforme sua produtividade com <span class="gradientText">ZenFlow</span></h1>
             <p class="text-xl md:text-md mb-8 max-w-3xl mx-auto text-zinc-300">Organize suas tarefas e alcance seus objetivos com facilidade</p>
-            <button class="gradientZenflow cursor-pointer text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all transform hover:scale-105">
+            <button id="btn-experimente-agora" class="gradientZenflow cursor-pointer text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all transform hover:scale-105">
                 Experimente Agora
             </button>
         </div>
         <div class="flex mx-3">
-            <img src="./assets/images/zenflowMenu.png" alt="ZenFlow Interface" 
-            class="w-full max-w-sm md:max-w-md lg:max-w-4xl rounded-lg">
+            <img src="./assets/images/zenflowMenu.webp" alt="ZenFlow Interface" 
+            class="w-full max-w-sm md:max-w-md lg:max-w-4xl rounded-lg" width="100%" height="100%"> 
         </div>
     </section>
 
@@ -229,7 +239,7 @@
                         </button>
                 <!-- </a> -->
                   
-                  <p class="text-sm text-gray-500 text-center mt-2">Gateway de pagamento 100% seguro</p>
+                  <p class="text-sm  text-center mt-2">Gateway de pagamento 100% seguro</p>
                 </div>
               </div>
               
@@ -249,8 +259,8 @@
                 <!-- Início do FAQ -->
                 <div class="space-y-4">
                     <!-- Pergunta 1 -->
-                    <div class="border-2 border-[#252525] rounded-xl p-4 duration-100 transition-all">
-                        <div class="flex justify-between items-center cursor-pointer" onclick="toggleAnswer(1)">
+                    <div class="border-2 border-[#252525] rounded-xl p-4 duration-100 transition-all cursor-pointer" onclick="toggleAnswer(1)">
+                        <div class="flex justify-between items-center " >
                             <h3 class="text-lg font-semibold text-white text-center w-full md:text-left">Como funciona?</h3>
                            
                         </div>
@@ -260,8 +270,8 @@
                     </div>
         
                     <!-- Pergunta 2 -->
-                    <div class="border-2 border-[#252525] rounded-xl p-4">
-                        <div class="flex justify-between items-center cursor-pointer" onclick="toggleAnswer(2)">
+                    <div class="border-2 border-[#252525] rounded-xl p-4 cursor-pointer" onclick="toggleAnswer(2)">
+                        <div class="flex justify-between items-center " >
                             <h3 class="text-lg font-semibold text-white text-center w-full md:text-left">Realmente vale R$39?</h3>
                           
                         </div>
@@ -271,8 +281,8 @@
                     </div>
         
                     <!-- Pergunta 3 -->
-                    <div class="border-2 border-[#252525] rounded-xl p-4">
-                        <div class="flex justify-between items-center cursor-pointer" onclick="toggleAnswer(3)">
+                    <div class="border-2 border-[#252525] rounded-xl p-4 cursor-pointer" onclick="toggleAnswer(3)">
+                        <div class="flex justify-between items-center" >
                             <h3 class="text-lg font-semibold text-white text-center w-full md:text-left">O Notion é pago?</h3>
                             
                         </div>
@@ -282,8 +292,8 @@
                     </div>
         
                     <!-- Pergunta 4 -->
-                    <div class="border-2 border-[#252525] rounded-xl p-4">
-                        <div class="flex justify-between items-center cursor-pointer" onclick="toggleAnswer(4)">
+                    <div class="border-2 border-[#252525] rounded-xl p-4 cursor-pointer" onclick="toggleAnswer(4)">
+                        <div class="flex justify-between items-center cursor-pointer" >
                             <h3 class="text-lg font-semibold text-white text-center w-full md:text-left">Qual o tempo de acesso?</h3>
                            
                         </div>
@@ -342,7 +352,7 @@
                     <ul class="space-y-2">
                         <li><a href="#home" class="text-zinc-300 hover:text-white transition-all">Home</a></li>
                         <li><a href="#sobre" class="text-zinc-300 hover:text-white transition-all">Sobre</a></li>
-                        <li><a href="#recursos" class="text-zinc-300 hover:text-white transition-all">Recursos</a></li>
+                        <li><a href="#pricing" class="text-zinc-300 hover:text-white transition-all">Preço</a></li>
                     </ul>
                 </div>
 
@@ -353,13 +363,15 @@
                             <svg class="h-5 w-5 text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
-                            <span class="text-zinc-300">contato@zenflow.com.br</span>
+                            <span class="text-zinc-300">contato@zenflowproductivity.com.br</span>
                         </li>
                         <li class="flex items-center space-x-2">
-                            <svg class="h-5 w-5 text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                            </svg>
-                            <span class="text-zinc-300">(11)9999-9999</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                            <span class="text-zinc-300">
+                                <a href="https://www.instagram.com/zenflow.productivity/" target="_blank">
+                                    zenflow.productivity
+                                </a>
+                            </span>
                         </li>
                     </ul>
                 </div>

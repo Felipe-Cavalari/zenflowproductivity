@@ -4,29 +4,56 @@ document.addEventListener('DOMContentLoaded', function() {
   const mobileMenu = document.getElementById('mobile-menu');
   const openMobileMenu = document.getElementById('open-mobile-menu');
   const closeMobileMenu = document.getElementById('close-mobile-menu');
+  const mobileNavLink = document.querySelectorAll('#mobile-nav-link');
   let isMobileMenuOpen = false;
 
 
+
+
   function openMobileNav() {
-    mobileMenu.classList.remove('hidden', 'max-h-0');
-    mobileMenu.classList.add('max-h-full');
-    openMobileMenu.classList.add('hidden');
-    closeMobileMenu.classList.remove('hidden');
-  }
+    mobileMenu.classList.remove("hidden", "max-h-0");
+    mobileMenu.classList.add("max-h-full");
+    openMobileMenu.classList.add("hidden");
+    closeMobileMenu.classList.remove("hidden");
+    menuToggle.setAttribute("aria-expanded", "true");
+    isMobileMenuOpen = true;
+}
 
-  function closeMobileNav() {
-    mobileMenu.classList.remove('max-h-full');
-    mobileMenu.classList.add('hidden', 'max-h-0');
-    closeMobileMenu.classList.add('hidden');
-    openMobileMenu.classList.remove('hidden');
-  }
+function closeMobileNav() {
+    mobileMenu.classList.remove("max-h-full");
+    mobileMenu.classList.add("hidden", "max-h-0");
+    closeMobileMenu.classList.add("hidden");
+    openMobileMenu.classList.remove("hidden");
+    menuToggle.setAttribute("aria-expanded", "false");
+    isMobileMenuOpen = false;
+}
 
-  menuToggle.addEventListener('click', function() {
+// Alternar menu ao clicar no botão
+menuToggle.addEventListener("click", function (event) {
+    event.stopPropagation(); // Evita que o clique se propague para o document
     isMobileMenuOpen ? closeMobileNav() : openMobileNav();
-    isMobileMenuOpen = !isMobileMenuOpen;
-  })
+});
 
+// Fecha o menu ao clicar fora dele
+document.addEventListener("click", function (event) {
+    if (isMobileMenuOpen && !mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+        closeMobileNav();
+    }
+});
 
+// Fecha o menu ao clicar em qualquer link dentro dele
+mobileNavLink.forEach(link => {
+  link.addEventListener("click", function () {
+      closeMobileNav();
+  });});
+
+function scrollToPrice(){
+  const pricingElement = document.getElementById('pricing');
+  pricingElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+  });
+}
 
   
 
@@ -34,12 +61,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // Adiciona o scroll no btn "Começar Agora" da Section CTA
 const btnScrollCta = document.getElementById('btn-scroll-cta')
 btnScrollCta.addEventListener('click', () => {
-  const pricingElement = document.getElementById('pricing');
-    pricingElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-        
-    });
+  scrollToPrice()
+})
+
+// adiciona o scroll no btc "Experimente agora"
+const btnScrollExperimentNow = document.getElementById('btn-experimente-agora')
+btnScrollExperimentNow.addEventListener('click', () => {
+  scrollToPrice()
 })
 
 
