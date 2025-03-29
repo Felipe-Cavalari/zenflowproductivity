@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  function openMobileNav() {
+function openMobileNav() {
     mobileMenu.classList.remove("hidden", "max-h-0");
     mobileMenu.classList.add("max-h-full");
     openMobileMenu.classList.add("hidden");
@@ -86,6 +86,31 @@ function closeAlert() {
     const alert = document.getElementById('alert');
     alert.classList.add('hidden')  // Esconde o alerta
 }
+
+
+// Efeito de header
+let lastScrollTop = 0;
+const header = document.querySelector("header");
+
+// Adiciona transição suave
+header.style.transition = "transform 0.5s ease-in-out";
+
+document.addEventListener("scroll", () => {
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop) {
+        // Rolando para baixo, esconde o header
+        header.style.transform = "translateY(-100%)";
+    } else {
+        // Rolando para cima, mostra o header
+        header.style.transform = "translateY(0)";
+    }
+    
+    lastScrollTop = scrollTop;
+});
+
+
+
 
 
 });
