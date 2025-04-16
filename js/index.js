@@ -72,21 +72,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Adiciona o alerta para caso alguem clique em compre agora antes do lançamento
-  const btnAlertPricing = document.getElementById("btn-alert-pricing");
-  btnAlertPricing.addEventListener("click", () => {
-    const alert = document.getElementById("alert");
-    alert.classList.remove("hidden"); // Exibe o alerta
-    setTimeout(closeAlert, 3000); // Fecha o alerta após 3 segundos
-  });
+  //   const btnAlertPricing = document.getElementById("btn-alert-pricing");
+  //   btnAlertPricing.addEventListener("click", () => {
+  //     const alert = document.getElementById("alert");
+  //     alert.classList.remove("hidden"); // Exibe o alerta
+  //     setTimeout(closeAlert, 3000); // Fecha o alerta após 3 segundos
+  //   });
 
-  // Função para fechar o alerta
-  function closeAlert() {
-    const alert = document.getElementById("alert");
-    alert.classList.add("hidden"); // Esconde o alerta
-  }
+  //   // Função para fechar o alerta
+  //   function closeAlert() {
+  //     const alert = document.getElementById("alert");
+  //     alert.classList.add("hidden"); // Esconde o alerta
+  //   }
 
-  // coleta o ano atual
-  const dataAtual = new Date();
-  const ano = dataAtual.getFullYear();
-  anoAtual.innerText = ano;
+  //   // coleta o ano atual
+  //   const dataAtual = new Date();
+  //   const ano = dataAtual.getFullYear();
+  //   anoAtual.innerText = ano;
 });
