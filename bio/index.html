@@ -79,6 +79,7 @@
     <script src="./js/index.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
 
     <!-- Google tag (gtag.js) -->
     <script
@@ -110,12 +111,14 @@
     <div
       class="text-gray-300 flex w-full items-center justify-center text-sm pt-5"
     >
-      <p>Produtividade sem esforço, organização sem limites.</p>
+      <p class="">Produtividade sem esforço, organização sem limites.</p>
     </div>
 
     <div class="flex w-full flex-col h-auto items-center pt-14 gap-6">
+      <p class="text-lg font-bold text-emerald-500">Promoção de lançamento!</p>
       <div
         class="h-6 drop-shadow-md rounded-lg p-6 w-80 gap-2 text-white cursor-pointer flex items-center bg-gradient-to-tr from-[#657DBB] to-[#03B592] justify-center"
+        id="bouncingBox"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -127,18 +130,29 @@
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-globe"
+          class="lucide lucide-brain-circuit-icon lucide-brain-circuit"
         >
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-          <path d="M2 12h20" />
+          <path
+            d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"
+          />
+          <path d="M9 13a4.5 4.5 0 0 0 3-4" />
+          <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5" />
+          <path d="M3.477 10.896a4 4 0 0 1 .585-.396" />
+          <path d="M6 18a4 4 0 0 1-1.967-.516" />
+          <path d="M12 13h4" />
+          <path d="M12 18h6a2 2 0 0 1 2 2v1" />
+          <path d="M12 8h8" />
+          <path d="M16 8V5a2 2 0 0 1 2-2" />
+          <circle cx="16" cy="13" r=".5" />
+          <circle cx="18" cy="3" r=".5" />
+          <circle cx="20" cy="21" r=".5" />
+          <circle cx="20" cy="8" r=".5" />
         </svg>
         <a
-          href="https://zenflowproductivity.com/templates"
-          class="text-white font-semibold text-center"
-          target="_blank"
+          href="https://zenflowproductivity.com"
+          class="text-white font-semibold text-center flex flex-col"
         >
-          Nossos Templates
+          <p>ZenFlow - Second Brain</p>
         </a>
       </div>
 
@@ -212,6 +226,33 @@
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
+          class="lucide lucide-globe"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+          <path d="M2 12h20" />
+        </svg>
+        <a
+          href="https://zenflowproductivity.com/templates"
+          class="text-white font-semibold text-center"
+        >
+          Nossos Templates
+        </a>
+      </div>
+
+      <div
+        class="h-6 drop-shadow-md rounded-lg p-6 w-80 gap-2 text-white cursor-pointer flex items-center bg-gradient-to-tr from-[#657DBB] to-[#03B592] justify-center"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
           class="lucide lucide-book"
         >
           <path
@@ -235,5 +276,7 @@
         &copy; 2025 Zenflow. Todos os direitos reservados.
       </p>
     </footer>
+
+    <script src="./index.js"></script>
   </body>
 </html>
